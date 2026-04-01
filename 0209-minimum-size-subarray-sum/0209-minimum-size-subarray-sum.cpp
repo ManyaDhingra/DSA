@@ -1,26 +1,20 @@
 class Solution {
 public:
     int minSubArrayLen(int target, vector<int>& nums) {
+        int n = nums.size();
+        int l = 0 , sum = 0;
+        int ans = INT_MAX;
 
-    int n = nums.size();
-    int left = 0, sum = 0;
-    int minLen = INT_MAX;
-
-    for (int right = 0; right < n; right++) {
-        sum += nums[right];
-
-        while (sum >= target) {
-            minLen = min(minLen, right - left + 1);
-            sum -= nums[left];
-            left++;
+        for(int i = 0 ; i < nums.size() ; i++){
+            sum += nums[i];
+            while(sum >= target){
+                ans = min(ans, i-l+1);
+                sum -= nums[l];
+                l++;
+            }
         }
-    }
 
-    if(minLen == INT_MAX){
-        return 0;
-    }
-    else{
-        return minLen;
-    }
+        return (ans == INT_MAX) ? 0 : ans;
+        
     }
 };
