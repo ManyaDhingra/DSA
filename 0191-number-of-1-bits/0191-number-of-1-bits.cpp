@@ -12,6 +12,8 @@ public:
             n /= 2;
         }
 
+        reverse(ans.begin(), ans.end());
+
         int count = 0;
 
         for(int i = 0 ; i < ans.size() ; i++){
