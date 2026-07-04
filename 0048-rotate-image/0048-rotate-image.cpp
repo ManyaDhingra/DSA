@@ -9,11 +9,6 @@ public:
             }
         }
 
-        int startrow = 0;
-        int endrow = n-1 ;
-        int startcol = 0 ;
-        int endcol = n-1;
-
         for(int i = 0 ; i < n ; i++){
             int start = 0;
             int end = n-1;
